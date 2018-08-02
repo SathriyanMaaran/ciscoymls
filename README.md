@@ -12,4 +12,5 @@ https://docs.ansible.com/ansible/2.5/network/getting_started/first_playbook.html
 ### Run Playbook against specified hosts
 sudo ansible-playbook -i host-file playbook-file.yml
 
-### 
+### CLI Flags
+-k //provide SSH password at prompt
