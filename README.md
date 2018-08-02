@@ -20,6 +20,9 @@ Ansible is a powerful tool that has become very popular in application deploymen
 ### Official Docs
 https://docs.ansible.com/ansible/2.4/ios_command_module.html
 https://docs.ansible.com/ansible/2.5/network/getting_started/first_playbook.html#run-your-first-command-and-playbook
+### Playbook Breakdown
+https://lh4.googleusercontent.com/5KuVCWBG5wtLxjhtHccLcdoOoTCD5Y-AKK96s_DMPCj3Ax895bZhHvbPucfUMLjpF0V8kpTEM5GCy6aH8FGJ2XzMjFtkhAV4Fk7XSfMaxFkcrw4sj3QysWkcMcsxpBbOjvK2Gcpg
+
 
 ### Main Ansible configuration file 
 /etc/ansible/ansible.cfg
@@ -34,5 +37,3 @@ sudo ansible-playbook -i host-file playbook-file.yml
 ### Commands
 ansible all -m ping     //ping every host in group [all]
 ansible routers -m ping     //ping every host in group [routers]
-
-https://lh4.googleusercontent.com/5KuVCWBG5wtLxjhtHccLcdoOoTCD5Y-AKK96s_DMPCj3Ax895bZhHvbPucfUMLjpF0V8kpTEM5GCy6aH8FGJ2XzMjFtkhAV4Fk7XSfMaxFkcrw4sj3QysWkcMcsxpBbOjvK2Gcpg
