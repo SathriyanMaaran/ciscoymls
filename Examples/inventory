@@ -1,0 +1,11 @@
+[access_switches]
+1.1.1.1
+1.1.1.2
+
+[core_switches]
+1.1.2.1
+1.1.2.2
+
+[switches:children]
+access-switches
+core-switches
