@@ -30,3 +30,7 @@ sudo ansible-playbook -i host-file playbook-file.yml
 ### CLI Flags
 -i      //specify inventory file
 -k      //provide SSH password at prompt
+
+### Commands
+ansible all -m ping     //ping every host in group [all]
+ansible routers -m ping     //ping every host in group [routers]
