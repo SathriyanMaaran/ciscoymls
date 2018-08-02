@@ -4,6 +4,7 @@ Ansible is a powerful tool that has become very popular in application deploymen
 
 ### Official Docs
 https://docs.ansible.com/ansible/2.4/ios_command_module.html
+https://docs.ansible.com/ansible/2.5/network/getting_started/first_playbook.html#run-your-first-command-and-playbook
 
 ### Main Ansible configuration file 
 /etc/ansible/ansible.cfg
