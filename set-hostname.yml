@@ -1,6 +1,6 @@
 ---
 - name: 
-  hosts: ios
+  hosts: 27.27.27.208
   
   tasks:
   
