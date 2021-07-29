@@ -9,6 +9,9 @@
          lines:
          - neighbor 192.168.10.1 remote-as 4755
          - neighbor 192.168.10.1 description BGP_NEW
+         - address-family ipv4
+         - network 7.7.7.0 mask 255.255.255.0
+         - neighbor 192.168.10.1 activate
          parents: router bgp 63345
      register: version
    - name: Second Task
