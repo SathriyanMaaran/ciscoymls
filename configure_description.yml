@@ -7,8 +7,8 @@
    - name: First Task
      ios_config:
        lines:
-         - description - #CONNECTED_INTERFACE_0/1/1#
-       parents: interface GigabitEthernet0/1/1
+         - description - CONNECTED_INTERFACE_0/0/0
+       parents: interface Gigabitethernet0/0/0
      register: version
    - name: Second Task
      debug:
