@@ -1,11 +1,16 @@
 ---
 - name: 
   hosts: 27.27.27.208
+  gather_facts: False
+  connection: local
   
   tasks:
-  
   - name: ASSIGN HOSTNAME
     ios_config:
       authorize: yes
       lines: ['hostname {{ new_hostname }}'] 
       force: yes
+       register: version
+   - name: Second Task
+     debug:
+       var: version
