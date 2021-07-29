@@ -9,8 +9,6 @@
     ios_config:
       authorize: yes
       lines: ['hostname {{ new_hostname }}'] 
-      force: yes
-       register: version
    - name: Second Task
      debug:
        var: version
