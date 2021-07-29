@@ -1,0 +1,15 @@
+---
+- name: First Play
+  hosts: 27.27.27.208
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_config:
+       lines:
+         - ip address - 192.168.10.1 255.255.255.252
+       parents: interface Gigabitethernet0/0/0
+     register: version
+   - name: Second Task
+     debug:
+       var: version
