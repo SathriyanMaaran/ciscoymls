@@ -20,7 +20,7 @@
         - afi: ipv4
           safi: unicast             
       operation: merge
-     register: version
-   - name: Second Task
+    register: version
+  - name: Second Task
      debug:
        var: version
