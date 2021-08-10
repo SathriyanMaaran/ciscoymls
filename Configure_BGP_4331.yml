@@ -13,7 +13,7 @@
          neighbors:
          - neighbor: 192.192.1.2
            remote_as: 64949
-		     networks:
+         networks:
          - prefix: 10.10.10.10
            masklen: 32
          address_family:
