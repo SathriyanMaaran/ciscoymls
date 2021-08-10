@@ -13,7 +13,7 @@
    - name: Second Task
      debug:
        var: version
-       ---
+       
 - name: Second Play
   hosts: 27.27.27.208
   gather_facts: False
