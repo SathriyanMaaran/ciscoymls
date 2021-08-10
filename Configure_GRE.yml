@@ -13,7 +13,7 @@
          - tunnel mode gre ip
          - description #GRE_TUNNEL_TO_1111#
          - no shutdown
-        parents: interface tunnel100
+        parents: interface Tunnel100
       register: version
     - name: Second Task
       debug:
@@ -33,7 +33,7 @@
          - tunnel mode gre ip
          - description #GRE_TUNNEL_TO_4331#
          - no shutdown
-       parents: interface tunnel100
+       parents: interface Tunnel 100
      register: version
    - name: Second Task
      debug:
