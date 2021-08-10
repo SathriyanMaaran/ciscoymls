@@ -1,0 +1,39 @@
+---
+- name: configure GRE at 4331
+  hosts: 27.27.27.213
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_config:
+         lines:
+         - neighbor 192.192.1.2 remote-as 64949
+         - neighbor 192.168.10.1 description BGP_PEER_C1111
+         - address-family ipv4
+         - network 10.10.10.10 mask 255.255.255.255
+         - neighbor 192.192.1.2 activate
+         parents: router bgp 65534
+     register: version
+   - name: Second Task
+     debug:
+       var: version
+
+- name: configure GRE at 1111
+  hosts: 27.27.27.209
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_config:
+         lines:
+         - neighbor 192.192.1.1 remote-as 65534
+         - neighbor 192.168.10.1 description BGP_PEER_4331
+         - address-family ipv4
+         - network 20.20.20.20 mask 255.255.255.255
+         - neighbor 192.192.1.1 activate
+         parents: router bgp 64949
+     register: version
+   - name: Second Task
+     debug:
+       var: version       
+       
