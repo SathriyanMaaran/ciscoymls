@@ -18,7 +18,7 @@
            masklen: 32
          address_family:
          - afi: ipv4
-            safi: unicast             
+           safi: unicast             
        operation: merge
      register: version
    - name: Second Task
