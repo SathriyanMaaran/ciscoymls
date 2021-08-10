@@ -7,11 +7,12 @@
    - name: First Task
      ios_config:
          lines:
-         - neighbor 192.192.1.2 remote-as 64949
-         - neighbor 192.168.10.1 description BGP_PEER_C1111
-         - address-family ipv4
-         - network 10.10.10.10 mask 255.255.255.255
-         - neighbor 192.192.1.2 activate
+         - ip address 100.100.100.1 255.255.255.252
+         - tunnel source 10.10.10.10
+         - tunnel destination 20.20.20.20
+         - tunnel mode gre ip
+         - description #GRE_TUNNEL_TO_1111#
+         - no shutdown
          parents: interface tunnel 100
      register: version
    - name: Second Task
@@ -26,11 +27,12 @@
    - name: First Task
      ios_config:
          lines:
-         - neighbor 192.192.1.1 remote-as 65534
-         - neighbor 192.168.10.1 description BGP_PEER_4331
-         - address-family ipv4
-         - network 20.20.20.20 mask 255.255.255.255
-         - neighbor 192.192.1.1 activate
+         - ip address 100.100.100.2 255.255.255.252
+         - tunnel source 20.20.20.20
+         - tunnel destination 10.10.10.10
+         - tunnel mode gre ip
+         - description #GRE_TUNNEL_TO_4331#
+         - no shutdown
          parents: interface tunnel 100
      register: version
    - name: Second Task
