@@ -1,0 +1,26 @@
+---
+- name: First Play
+  hosts: 27.27.27.213
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: configure global bgp as 65534
+     cisco.ios.ios_bgp:
+       config:
+         bgp_as: 65534
+         router_id: 192.192.1.1
+         log_neighbor_changes: true
+         neighbors:
+         - neighbor: 192.192.1.2
+           remote_as: 64949
+		     networks:
+         - prefix: 10.10.10.10
+           masklen: 32
+         address_family:
+         - afi: ipv4
+            safi: unicast             
+       operation: merge
+     register: version
+   - name: Second Task
+     debug:
+       var: version
