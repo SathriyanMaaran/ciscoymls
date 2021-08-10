@@ -1,0 +1,18 @@
+---
+- name: First Play
+  hosts: 27.27.27.214
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_config:
+       lines:
+         - description - CONNECTED_INTERFACE_0/0/1_TO_SOLUTION_SW
+         - encapsulation dot1Q 150
+         - ip address 192.192.1.1 255.255.255.252
+         - no shutdown
+       parents: interface Gigabitethernet0/0/1.150
+     register: version
+   - name: Second Task
+     debug:
+       var: version
