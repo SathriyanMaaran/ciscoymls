@@ -12,7 +12,6 @@
          - tunnel destination 20.20.20.20
          - tunnel mode gre ip
          - description #GRE_TUNNEL_TO_1111#
-         - no shutdown
         parents: interface Tunnel100
       register: version
     - name: Second Task
@@ -32,7 +31,6 @@
          - tunnel destination 10.10.10.10
          - tunnel mode gre ip
          - description #GRE_TUNNEL_TO_4331#
-         - no shutdown
        parents: interface Tunnel 100
      register: version
    - name: Second Task
