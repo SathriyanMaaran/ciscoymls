@@ -17,8 +17,7 @@
    - name: Second Task
      debug:
        var: version
-       
----
+
 - name: configure bgp at 1111
   hosts: 27.27.27.209
   gather_facts: False
