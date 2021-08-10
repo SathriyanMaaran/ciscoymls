@@ -30,7 +30,7 @@
        var: version
  
 - name: Third Play
-  hosts: 27.27.27.208
+  hosts: 27.27.27.209
   gather_facts: False
   connection: local
   tasks:
@@ -45,7 +45,7 @@
        var: version
        
 - name: Fourth Play
-  hosts: 27.27.27.208
+  hosts: 27.27.27.209
   gather_facts: False
   connection: local
   tasks:
@@ -72,7 +72,7 @@
      debug:
        var: version
        
-   - name: Sixth Play
+- name: Sixth Play
   hosts: 27.27.27.209
   gather_facts: False
   connection: local
