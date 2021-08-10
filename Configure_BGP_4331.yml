@@ -22,5 +22,5 @@
       operation: merge
     register: version
   - name: Second Task
-     debug:
-       var: version
+    debug:
+      var: version
