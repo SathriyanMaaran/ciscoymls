@@ -10,7 +10,7 @@
          - encr 3des
          - hash md5
          - authentication pre-share
-         - group 2
+         - group 5
          - crypto isakmp key cisco123 address 192.192.1.2
          - crypto ipsec transform-set TS esp-3des esp-md5-hmac
        parents: crypto isakmp policy 100
@@ -42,7 +42,7 @@
    - name: First Task
      ios_config:
        lines:
-         - set peer 1.1.1.2
+         - set peer 192.192.1.2
          - set transform-set TS
          - match address VPN-TRAFFIC_1
        parents: crypto map CMAP 10 ipsec-isakmp
@@ -94,7 +94,7 @@
    - name: First Task
      ios_config:
        lines:
-         - permit ip 10.10.10.0 0.0.0.255 20.20.20.0 0.0.0.255
+         - permit ip 20.20.20.0 0.0.0.255 10.10.10.0 0.0.0.255
        parents: ip access-list extended VPN-TRAFFIC_1
      register: version
    - name: Second Task
@@ -109,7 +109,7 @@
    - name: First Task
      ios_config:
        lines:
-         - set peer 1.1.1.2
+         - set peer 192.168.1.1
          - set transform-set TS
          - match address VPN-TRAFFIC_1
        parents: crypto map CMAP 10 ipsec-isakmp
