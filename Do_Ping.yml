@@ -9,6 +9,8 @@
        dest: 20.20.20.20
        source: 10.10.10.10
        count: 20
+       provider :
+           timeout : 15
 
      register: version
    - name: Second Task
