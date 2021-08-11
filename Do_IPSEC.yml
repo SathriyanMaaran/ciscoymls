@@ -330,12 +330,44 @@
        dest: 20.20.20.20
        source: 10.10.10.10
        count: 50
+       timeout: 15
      register: version
    - name: Second Task
      debug:
        var: version
        
-           
+- name: First Play
+  hosts: 27.27.27.209
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_ping:
+       dest: 10.10.10.10
+       source: 10.10.10.10
+       count: 50
+       timeout: 15
+     register: version
+   - name: Second Task
+     debug:
+       var: version       
+
+- name: First Play
+  hosts: 27.27.27.213
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_ping:
+       dest: 20.20.20.20
+       source: 10.10.10.10
+       count: 50
+       timeout: 15
+     register: version
+   - name: Second Task
+     debug:
+       var: version
+
 - name: Cisco ISR 4331 - IPSEC Tunnel Status
   hosts: 27.27.27.213
   gather_facts: False
