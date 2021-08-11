@@ -1,5 +1,5 @@
 ---
-- name: Cisco iSR 4331 Interface Configuation
+- name: Cisco ISR 4331 Interface Configuation
   hosts: 27.27.27.213
   gather_facts: False
   connection: local
@@ -7,7 +7,7 @@
    - name: First Task
      ios_config:
        lines:
-         - description - #CONNECTED_INTERFACE_0/0/0_TO_HUAWEI_SW_Gi0/0/14#
+         - description - CONNECTED_INTERFACE_0/0/0_TO_HUAWEI_SW_Gi0/0/14
          - encapsulation dot1Q 165
          - ip address 192.192.1.1 255.255.255.252
          - no shutdown
@@ -17,7 +17,7 @@
      debug:
        var: version
 
-- name: Cisco iSR 4331 LAN Interface Configuartion
+- name: Cisco ISR 4331 LAN Interface Configuartion
   hosts: 27.27.27.213
   gather_facts: False
   connection: local
@@ -25,7 +25,7 @@
    - name: First Task
      ios_config:
        lines:
-         - description - #Cisco_4331_LAN_10#
+         - description - Cisco_4331_LAN_10
          - ip address 10.10.10.10 255.255.255.0
          - no shutdown
        parents: interface loopback10
@@ -42,7 +42,7 @@
    - name: First Task
      ios_config:
        lines:
-         - description - #CONNECTED_INTERFACE_0/0/0_TO_ACE_Fa0/20#
+         - description - CONNECTED_INTERFACE_0/0/0_TO_ACE_Fa0/20
          - encapsulation dot1Q 165
          - ip address 192.192.1.2 255.255.255.252
          - no shutdown
@@ -52,7 +52,7 @@
      debug:
        var: version
 
-- name: Cisco IR 1111 LAN Interface Configuartion
+- name: Cisco ISR 1111 LAN Interface Configuartion
   hosts: 27.27.27.209
   gather_facts: False
   connection: local
@@ -60,7 +60,7 @@
    - name: First Task
      ios_config:
        lines:
-         - description - #Cisco_1111_LAN_20#
+         - description - Cisco_1111_LAN_20
          - ip address 20.20.20.20 255.255.255.0
          - no shutdown
        parents: interface loopback20
