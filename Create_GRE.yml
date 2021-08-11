@@ -13,7 +13,7 @@
         - 'tunnel mode gre ip'
         - 'description #GRE_TUNNEL_TO_1111#
         parents: interface Tunnel 10
-      register: version
-    - name: Second Task
-      debug:
-        var: version
+     register: version
+   - name: Second Task
+     debug:
+       var: version
