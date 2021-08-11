@@ -217,7 +217,7 @@
    - name: First Task
      ios_config:
        lines:
-         - set peer 192.168.1.1
+         - set peer 192.192.1.1
          - set transform-set TS
          - match address VPN-TRAFFIC_1
        parents: crypto map CMAP 10 ipsec-isakmp
