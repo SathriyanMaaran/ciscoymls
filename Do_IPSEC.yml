@@ -330,7 +330,7 @@
        dest: 20.20.20.20
        source: 10.10.10.10
        count: 50
-       timeout: 15
+       timeout: 30
      register: version
    - name: Second Task
      debug:
@@ -344,7 +344,7 @@
    - name: First Task
      ios_ping:
        dest: 10.10.10.10
-       source: 10.10.10.10
+       source: 20.20.20.20
        count: 50
        timeout: 15
      register: version
