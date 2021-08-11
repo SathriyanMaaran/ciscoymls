@@ -185,7 +185,7 @@
          - encr 3des
          - hash md5
          - authentication pre-share
-         - group 2
+         - group 5
          - crypto isakmp key cisco123 address 192.192.1.1
          - crypto ipsec transform-set TS esp-3des esp-md5-hmac
        parents: crypto isakmp policy 100
@@ -242,7 +242,7 @@
        var: version
 
 
-- name: Cisco ISR 4331 - BGP Route Details
+- name: Cisco ISR 4331 - BGP Status
   hosts: 27.27.27.213
   gather_facts: False
   connection: local
@@ -254,8 +254,72 @@
    - name: Second Task
      debug:
        var: version
+       
+- name: Cisco ISR 4331 - BGP Status
+  hosts: 27.27.27.209
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_command:
+         commands: Show ip bgp summary
+     register: version
+   - name: Second Task
+     debug:
+       var: version       
 
-
+- name: Cisco ISR 4331 - BGP Route details
+  hosts: 27.27.27.213
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_command:
+         commands: show ip bgp 192.192.1.2
+     register: version
+   - name: Second Task
+     debug:
+       var: version
+       
+- name: Cisco ISR 1111 - BGP Route details
+  hosts: 27.27.27.213
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_command:
+         commands: show ip bgp 192.192.1.1
+     register: version
+   - name: Second Task
+     debug:
+       var: version
+       
+- name: Cisco ISR 4331 - BGP  LAN Route details
+  hosts: 27.27.27.213
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_command:
+         commands: show ip route 20.20.20.0
+     register: version
+   - name: Second Task
+     debug:
+       var: version
+       
+- name: Cisco ISR 1111 - BGP LAN Route details
+  hosts: 27.27.27.213
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_command:
+         commands: show ip route 10.10.10.0
+     register: version
+   - name: Second Task
+     debug:
+       var: version
+       
 - name: Initiate Intresting Traffic to activate IPSEC Tunnel
   hosts: 27.27.27.213
   gather_facts: False
@@ -268,5 +332,18 @@
    - name: Second Task
      debug:
        var: version
+       
+- name: Initiate Intresting Traffic to activate IPSEC Tunnel
+  hosts: 27.27.27.213
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_command:
+         commands: Ping 20.20.20.20 source 10.10.10.10
+     register: version
+   - name: Second Task
+     debug:
+       var: version       
            
            
