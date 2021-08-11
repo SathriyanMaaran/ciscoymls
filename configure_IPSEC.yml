@@ -334,7 +334,21 @@
    - name: Second Task
      debug:
        var: version 
-       
+
+- name: Initiate Intresting Traffic to activate IPSEC Tunnel
+  hosts: 27.27.27.209
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_command:
+         commands: Ping 10.10.10.10 source 20.20.20.20 
+         timeout: 15
+     register: version
+   - name: Second Task
+     debug:
+       var: version            
+
 - name: Initiate Intresting Traffic to activate IPSEC Tunnel
   hosts: 27.27.27.213
   gather_facts: False
@@ -342,7 +356,8 @@
   tasks:
    - name: First Task
      ios_command:
-         commands: Ping 20.20.20.20 source 10.10.10.10 timeout 15
+         commands: Ping 20.20.20.20 source 10.10.10.10 
+         timeout: 15
      register: version
    - name: Second Task
      debug:
