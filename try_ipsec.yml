@@ -1,0 +1,18 @@
+---
+- name: First Play
+  hosts: 27.27.27.214
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_config:
+       lines:
+         - encr 3des
+         - hash md5
+         - authentication pre-share
+         - group 2
+       parents: crypto isakmp policy 100
+     register: version
+   - name: Second Task
+     debug:
+       var: version
