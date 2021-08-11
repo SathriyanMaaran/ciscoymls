@@ -11,6 +11,7 @@
          - hash md5
          - authentication pre-share
          - group 2
+         - crypto isakmp key cisco123 address 192.192.1.2
        parents: crypto isakmp policy 100
      register: version
    - name: Second Task
