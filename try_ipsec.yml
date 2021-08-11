@@ -12,6 +12,7 @@
          - authentication pre-share
          - group 2
          - crypto isakmp key cisco123 address 192.192.1.2
+         - crypto ipsec transform-set TS esp-3des esp-md5-hmac
        parents: crypto isakmp policy 100
      register: version
    - name: Second Task
@@ -32,3 +33,38 @@
    - name: Second Task
      debug:
        var: version       
+
+- name: Third Play
+  hosts: 27.27.27.213
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_config:
+       lines:
+         - set peer 1.1.1.2
+         - set transform-set TS
+         - match address VPN-TRAFFIC_1
+       parents: crypto map CMAP 10 ipsec-isakmp
+     register: version
+   - name: Second Task
+     debug:
+       var: version
+       
+- name: Fourth Play
+  hosts: 27.27.27.213
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_config:
+       lines:
+         -  crypto map CMAP
+       parents: interface Gi0/0/0.165
+     register: version
+   - name: Second Task
+     debug:
+       var: version       
+       
+       
+
