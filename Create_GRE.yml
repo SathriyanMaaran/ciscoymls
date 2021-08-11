@@ -1,0 +1,19 @@
+---
+- name: configure GRE at 4331
+  hosts: 27.27.27.213
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: create tunnel interface to C1111
+     ios_config:
+       lines:
+        - 'ip address 100.100.100.1 255.255.255.252'
+        - 'tunnel source 10.10.10.10'
+        - 'tunnel destination 20.20.20.20'
+        - 'tunnel mode gre ip'
+        - 'description #GRE_TUNNEL_TO_1111#
+        parents: interface Tunnel 10
+      register: version
+    - name: Second Task
+      debug:
+        var: version
