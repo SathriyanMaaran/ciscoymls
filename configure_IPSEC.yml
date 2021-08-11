@@ -347,3 +347,56 @@
        var: version       
            
            
+- name: Cisco ISR 4331 - IPSEC Tunnel Status
+  hosts: 27.27.27.213
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_command:
+         commands: show crypto isakmp sa detail
+     register: version
+   - name: Second Task
+     debug:
+       var: version
+       
+- name: Cisco ISR 1111 - IPSEC Tunnel Status
+  hosts: 27.27.27.213
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_command:
+         commands: show crypto isakmp sa detail
+     register: version
+   - name: Second Task
+     debug:
+       var: version
+
+- name: Cisco ISR 4331 - IPSEC Tunnel Encrypted Traffic Details
+  hosts: 27.27.27.213
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_command:
+         commands: show crypto ipsec sa peer 192.192.1.1 detail
+     register: version
+   - name: Second Task
+     debug:
+       var: version
+       
+- name: Cisco ISR 1111 - IPSEC Tunnel Encrypted Traffic Details
+  hosts: 27.27.27.209
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_command:
+         commands: show crypto ipsec sa peer 192.192.1.1 detail
+     register: version
+   - name: Second Task
+     debug:
+       var: version
+       
+       
