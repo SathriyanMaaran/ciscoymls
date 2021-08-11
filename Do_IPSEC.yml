@@ -329,9 +329,9 @@
      cisco.ios.ios_ping:
        dest: 20.20.20.20
        source: 10.10.10.10
-       timeout: 15
        count: 20
-
+       provider :
+           timeout: 15 
      register: version
    - name: Second Task
      debug:
@@ -346,7 +346,6 @@
      cisco.ios.ios_ping:
        dest: 10.10.10.10
        source: 20.20.20.20
-       timeout: 15
        count: 20
     
      register: version
