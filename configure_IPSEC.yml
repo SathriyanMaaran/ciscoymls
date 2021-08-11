@@ -69,7 +69,7 @@
      debug:
        var: version         
      
- - name: Cisco ISR 4331 BGP Configuartion
+- name: Cisco ISR 4331 BGP Configuartion
   hosts: 27.27.27.213
   gather_facts: False
   connection: local
