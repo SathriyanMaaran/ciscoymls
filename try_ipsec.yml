@@ -133,3 +133,18 @@
      debug:
        var: version
 
+- name: Tenth Play
+  hosts: 27.27.27.213
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     cisco.ios.ios_ping:
+       dest: 20.20.20.20
+       source: 10.10.10.10
+       count: 5
+
+     register: version
+   - name: Second Task
+     debug:
+       var: version
