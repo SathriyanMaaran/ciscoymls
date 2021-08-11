@@ -329,7 +329,7 @@
    - name: First Task
      ios_command:
          commands: Ping 20.20.20.20 source 10.10.10.10
-         timeout: 20
+         timeout: 50
      register: version
    - name: Second Task
      debug:
