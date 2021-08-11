@@ -320,7 +320,6 @@
      debug:
        var: version
        
----
 - name: First Play
   hosts: 27.27.27.213
   gather_facts: False
