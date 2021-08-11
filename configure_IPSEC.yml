@@ -255,7 +255,7 @@
      debug:
        var: version
        
-- name: Cisco ISR 4331 - BGP Status
+- name: Cisco ISR 1111 - BGP Status
   hosts: 27.27.27.209
   gather_facts: False
   connection: local
@@ -282,7 +282,7 @@
        var: version
        
 - name: Cisco ISR 1111 - BGP Route details
-  hosts: 27.27.27.213
+  hosts: 27.27.27.209
   gather_facts: False
   connection: local
   tasks:
@@ -320,18 +320,6 @@
      debug:
        var: version
        
-- name: Initiate Intresting Traffic to activate IPSEC Tunnel
-  hosts: 27.27.27.213
-  gather_facts: False
-  connection: local
-  tasks:
-   - name: First Task
-     ios_command:
-         commands: Ping 20.20.20.20 source 10.10.10.10
-     register: version
-   - name: Second Task
-     debug:
-       var: version
        
 - name: Initiate Intresting Traffic to activate IPSEC Tunnel
   hosts: 27.27.27.213
@@ -361,7 +349,7 @@
        var: version
        
 - name: Cisco ISR 1111 - IPSEC Tunnel Status
-  hosts: 27.27.27.213
+  hosts: 27.27.27.209
   gather_facts: False
   connection: local
   tasks:
