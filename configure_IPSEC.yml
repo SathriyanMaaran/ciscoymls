@@ -240,4 +240,33 @@
    - name: Second Task
      debug:
        var: version
+
+
+- name: Cisco ISR 4331 - BGP Route Details
+  hosts: 27.27.27.213
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_command:
+         commands: Show ip bgp summary
+     register: version
+   - name: Second Task
+     debug:
+       var: version
+
+
+- name: Initiate Intresting Traffic to activate IPSEC Tunnel
+  hosts: 27.27.27.213
+  gather_facts: False
+  connection: local
+  tasks:
+   - name: First Task
+     ios_command:
+         commands: Ping 20.20.20.20 source 10.10.10.10
+     register: version
+   - name: Second Task
+     debug:
+       var: version
+           
            
