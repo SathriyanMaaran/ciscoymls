@@ -326,12 +326,10 @@
   connection: local
   tasks:
    - name: First Task
-     cisco.ios.ios_ping:
+       ios_ping:
        dest: 20.20.20.20
        source: 10.10.10.10
-       count: 20
-       provider :
-           timeout: 15 
+       count: 50
      register: version
    - name: Second Task
      debug:
