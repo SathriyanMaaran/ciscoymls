@@ -121,7 +121,7 @@
          - group 5
          - crypto isakmp key cisco123 address 192.192.1.2
          - crypto ipsec transform-set TS esp-3des esp-md5-hmac
-       parents: crypto isakmp policy 100
+       parents: crypto isakmp policy 10
      register: version
    - name: Second Task
      debug:
@@ -188,7 +188,7 @@
          - group 5
          - crypto isakmp key cisco123 address 192.192.1.1
          - crypto ipsec transform-set TS esp-3des esp-md5-hmac
-       parents: crypto isakmp policy 100
+       parents: crypto isakmp policy 10
      register: version
    - name: Second Task
      debug:
@@ -328,7 +328,7 @@
   tasks:
    - name: First Task
      ios_command:
-         commands: Ping 20.20.20.20 source 10.10.10.10
+         commands: Ping 20.20.20.20 source 10.10.10.10 timeout 15
      register: version
    - name: Second Task
      debug:
