@@ -3,6 +3,8 @@
   hosts: 27.27.27.213
   gather_facts: False
   connection: network_cli
+  collections:
+    - cisco.ios.ios
   tasks:
   - name: configure global bgp as 65534
     cisco.ios.ios_bgp:
