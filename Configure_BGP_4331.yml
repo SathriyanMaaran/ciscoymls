@@ -1,6 +1,6 @@
 ---
 - name: First Play
-  hosts: 27.27.27.213
+  hosts: routers
   gather_facts: False
   connection: network_cli
   collections:
