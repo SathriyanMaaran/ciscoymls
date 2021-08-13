@@ -1,0 +1,40 @@
+---
+- name: Cisco ISR 4331 Interface Configuation
+  hosts: ipsec_4331
+  gather_facts: False
+  connection: network_cli
+  collections:
+    - cisco.ios.ios
+  tasks:
+   - name: First Task
+     ios_config:
+       lines:
+         - description - CONNECTED_INTERFACE_0/0/0_TO_HUAWEI_SW_Gi0/0/14
+         - encapsulation dot1Q 165
+         - ip address 192.192.1.1 255.255.255.252
+         - no shutdown
+       parents: interface Gigabitethernet0/0/0.165
+     register: version
+   - name: Second Task
+     debug:
+       var: version
+
+
+- name: Cisco ISR 1111 LAN Interface Configuartion
+  hosts: ipsec_1111
+  gather_facts: False
+  connection: network_cli
+  collections:
+    - cisco.ios.ios
+  tasks:
+   - name: First Task
+     ios_config:
+       lines:
+         - description - Cisco_1111_LAN_20
+         - ip address 20.20.20.20 255.255.255.0
+         - no shutdown
+       parents: interface loopback20
+     register: version
+   - name: Second Task
+     debug:
+       var: version
